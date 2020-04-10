@@ -1,5 +1,15 @@
 {
-  "extends": [
-    "wesbos"
-  ]
+  "extends": ["wesbos"],
+  "rules": {
+    "no-console": 0,
+    "quotes": ["error", "backtick"],
+    // turn this on error for production
+    "no-unused-vars": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "es5"
+      }
+    ]
+  }
 }
