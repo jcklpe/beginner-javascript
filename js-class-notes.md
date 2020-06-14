@@ -73,3 +73,48 @@ nodenextElementSibling;
 node.parentElement;
 ```
 
+## Attaching an event listener procedurally
+
+```javascript
+// select all buttons
+const buyButtons = document.querySelectorAll(`button.buy`);
+
+// declare action function
+function buyItem() {
+  const aDiv = document.createElement(`div`);
+  aDiv.textContent = `nice!`;
+  document.body.append(aDiv);
+}
+
+//attach event listener to an event object
+function attachEventListener(event) {
+  event.addEventListener(`click`, buyItem);
+}
+
+// loop through all buttons and attach listeners to it.
+buyButtons.forEach(attachEventListener);
+```
+
+## Attach event listener to element clicked
+
+```javascript
+// select all buttons
+const buyButtons = document.querySelectorAll(`button.buy`);
+
+// declare action function
+function handleBuyButtonClick(event) {
+   // select event argument 
+  const button = event.target;
+  console.log(event.target === event.currentTarget);
+}
+
+// declare event listener attachment function
+function attachListener(buyButton) {
+  buyButton.addEventListener(`click`, handleBuyButtonClick);
+    
+}    
+
+// loop through buttons and attach the listener
+buyButtons.forEach(attachListener);
+```
+
