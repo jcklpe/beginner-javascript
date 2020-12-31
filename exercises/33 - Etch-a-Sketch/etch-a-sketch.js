@@ -55,7 +55,7 @@ function handleKey(event) {
     draw({ key: event.key });
   }
 }
-//shake function
+//shake functio
 function clearCanvas() {
   etchasketch.classList.add(`shake`);
   context.clearRect(0, 0, width, height);
