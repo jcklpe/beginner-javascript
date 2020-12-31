@@ -56,6 +56,18 @@ function handleKey(event) {
   }
 }
 //shake function
+function clearCanvas() {
+  etchasketch.classList.add(`shake`);
+  context.clearRect(0, 0, width, height);
+  etchasketch.addEventListener(
+    `animationend`,
+    function() {
+      etchasketch.classList.remove(`shake`);
+    },
+    { once: true }
+  );
+}
 
 // event listeners
 window.addEventListener(`keydown`, handleKey);
+shakebutton.addEventListener(`click`, clearCanvas);
