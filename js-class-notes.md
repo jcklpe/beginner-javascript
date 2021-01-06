@@ -23,7 +23,7 @@ const myFragment = document.createRange().createContextualFragment(`
 // append an element into another HTML element. Can only accepts Node objects
 ParentNode.appendChild(myDiv);
 
-//append an element into another HTML element. can also append strings. 
+//append an element into another HTML element. can also append strings.
 ParentNode.append(myDiv);
 
 // insert element adjacent to another
@@ -103,7 +103,7 @@ const buyButtons = document.querySelectorAll(`button.buy`);
 
 // declare action function
 function handleBuyButtonClick(event) {
-   // select event argument 
+   // select event argument
   const button = event.target;
   console.log(event.target === event.currentTarget);
 }
@@ -111,10 +111,15 @@ function handleBuyButtonClick(event) {
 // declare event listener attachment function
 function attachListener(buyButton) {
   buyButton.addEventListener(`click`, handleBuyButtonClick);
-    
-}    
+
+}
 
 // loop through buttons and attach the listener
 buyButtons.forEach(attachListener);
 ```
 
+# Objects and Variables: Passing by Reference versus Passing by Value
+
+Strings are passed by value.
+
+Objects and Arrays are passed by reference.
