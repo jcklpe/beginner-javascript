@@ -123,3 +123,19 @@ buyButtons.forEach(attachListener);
 Strings are passed by value.
 
 Objects and Arrays are passed by reference.
+
+# Array Methods
+
+## Pop versus Unshift
+
+Why are so many language's array prepend function called unshift and not prepend?
+
+> The "prepend" operation is often called "unshift" when the "array" is used as a deque (ie. a data structure that can be used to implement both a stack and a queue).
+> The operation to add something (an "item") to a deque is often called "push". If you see the deque as a stack (First In, Last Out), you need an operation to get the the item that was pushed most recently, this operation is often called "pop".
+> Now if you see the deque as a queue (First In, First Out) you need an operation to get the item that was pushed least recently. This operation is called "shift" because if you have implemented the deque with a fixed origin it means shifting all the items except the first one one position towards this origin. Of course, this is not a very efficient of a deque used as a list...
+> Actually the real origin of the name "shift" is probably shift registers, which does something similar in hardware (http://en.wikipedia.org/wiki/Shift_register).
+> Oh, and unshift... I guess it's just an invented word for "the opposite of shift".
+> The most logical convention in that respect is probably the one used in the C++ STL: call push "push_back", unshift "push_front", pop "pop_back" and shift "pop_front".
+-- [source](https://www.quora.com/Why-are-so-many-languages-array-prepend-function-called-unshift-and-not-prepend)
+
+So push pushes something into the end of the array. Unshift pushes something into the front of the array. Pop grabs something from the end of the array, shift grabs something from the beginning of the array.

@@ -12,14 +12,26 @@
 
 <body>
   <script>
-    const toppings = ['Mushrooms ', 'Tomatoes', 'Eggs', 'Chili', 'Lettuce', 'Avocado', 'Chiles', 'Bacon', 'Pickles', 'Onions', 'Cheese'];
+    const toppings = [
+  `Mushrooms `,
+  `Tomatoes`,
+  `Eggs`,
+  `Chili`,
+  `Lettuce`,
+  `Avocado`,
+  `Chiles`,
+  `Bacon`,
+  `Pickles`,
+  `Onions`,
+  `Cheese`,
+];
 
-    const buns = ['egg', 'wonder', 'brioche'];
+    const buns = [`egg`, `wonder`, `brioche`];
 
     const meats = {
       beyond: 10,
       beef: 5,
-      pork: 7
+      pork: 7,
     };
 
     const prices = {
@@ -32,14 +44,18 @@
     const orderTotals = [342, 1002, 523, 34, 634, 854, 1644, 2222];
 
     const feedback = [
-      { comment: 'Love the burgs', rating: 4 },
-      { comment: 'Horrible Service', rating: 2 },
-      { comment: 'Smoothies are great, liked the burger too', rating: 5 },
-      { comment: 'Ambiance needs work', rating: 3 },
-      { comment: 'I DONT LIKE BURGERS', rating: 1 },
+      { comment: `Love the burgs`, rating: 4 },
+      { comment: `Horrible Service`, rating: 2 },
+      { comment: `Smoothies are great, liked the burger too`, rating: 5 },
+      { comment: `Ambiance needs work`, rating: 3 },
+      { comment: `I DONT LIKE BURGERS`, rating: 1 },
     ];
+function same(value) {
+  return JSON.stringify(value);
+}
 
-
+const orderTotalsNegated = feedback.map(same);
+console.log(orderTotalsNegated);
     /*
       Static Methods
     */
@@ -66,7 +82,6 @@
     // add it back in with unshift()
     // Do the last four,but immutable (with spreads and new variables)
 
-
     // Make a copy of the toppings array with slice()
     // Make a copy of the toppings array with a spread
     // take out items 3 to 5 of your new toppings array with splice()
@@ -80,6 +95,12 @@
     */
 
     // find the first rating that talks about a burger with find()
+function findBurgerRating(singleFeedback) {
+  return singleFeedback.comment.includes(`burg`);
+}
+
+const burgRating = feedback.find(findBurgerRating);
+
     // find all ratings that are above 2 with filter()
     // find all ratings that talk about a burger with filter()
     // Remove the one star rating however you like!
@@ -93,7 +114,6 @@
     /*
       Looping Methods (next)
     */
-
   </script>
 </body>
 
